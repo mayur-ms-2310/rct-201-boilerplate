@@ -21,7 +21,7 @@ useEffect(()=>{
   return acc + el.price
  },0)
  settotal(to)
-})
+},[added])
 
   if (count===0) {
     return <div className="emptyCart">Nothing in cart</div>;
