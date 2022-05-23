@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
  type  cus = {
   price?: number,
   product_name?:string,
+  reviews?:any;
 }
 
 function CardDetails() {
@@ -25,7 +26,7 @@ setpar(data.data)
       </span>
       <img className="detailsImage" src="https://cdn.pixabay.com/photo/2016/03/26/13/09/workspace-1280538__340.jpg" alt="" />
       {/* Notice the "Price: $". do not edit it. */}
-      <span className="detailsPrice">Price: $ {par.price}</span>
+      <span className="detailsPrice">Price: $</span>
       <span className="detailsPrice">{par.price}</span>
       <div>
         <h5>Reviews:</h5>
@@ -37,10 +38,13 @@ setpar(data.data)
         </div>
         
         */}
-        <div className="review">
-          <span className="reviewBy">UserName1234</span>
-          <span className="reviewDesc">This product is really good etc....</span>
+        {par.reviews&&[...par.reviews].map((el:any)=>{
+         return  <div className="review">
+          <span className="reviewBy">{el.by}</span>
+          <span className="reviewDesc">{el.review}</span>
         </div>
+        })}
+        
       </div>
     </div>
   );

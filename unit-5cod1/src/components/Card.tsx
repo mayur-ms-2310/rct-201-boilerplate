@@ -1,13 +1,15 @@
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { inc } from "../redux/action";
-// import { keys } from "./Body";
+import { saveData } from "../utils/Storage";
 import "./product.css"
-let crat:any = []
+
+let caritem :any = [];
 function Card({d}:any) {
   const [cartbut, setcartbut] = useState(false)
-  // const [crat,setcrt] = useState<any>([])
+
   let dispatch = useDispatch()
  
   return (
@@ -36,8 +38,8 @@ function Card({d}:any) {
       <button className="productAddtoCart" onClick={()=>{
         dispatch(inc(1))
         setcartbut(true)
-       crat.push(d)
-        localStorage.setItem("crt",JSON.stringify(crat))
+        caritem.push(d)
+        saveData("item",caritem)
       }}>
         Add to cart
       </button>}
