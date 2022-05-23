@@ -8,8 +8,9 @@ export const useList = (arr : any) => {
     }
 
     let pop = ()=>{
-    
-    }
+     let out = list.slice(0,-1)
+     setlist(out)
+}
 
     let clear = ()=>{
         setlist([])
@@ -20,10 +21,10 @@ export const useList = (arr : any) => {
     }
 
     let map = ()=>
-       list.map((el:any)=>{
-         return  el    
+       setlist(list.map((el:any)=>{
+         return  el  *2  
         
-    })
+    }))
 
     return [list,{push,pop,clear,reset,map}]
 };
