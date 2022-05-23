@@ -1,0 +1,14 @@
+.container{
+    display:grid;
+    grid-template-columns: repeat(2,30%);
+    gap: 20px;
+    justify-content: center;
+}
+.item{
+display:flex ;
+flex-direction: column;
+justify-content:center ;
+}
+.item>img{
+height: 250px;
+}
